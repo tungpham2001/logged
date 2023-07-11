@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/Home.css";
+import TempPic from "../images/logged.jpg";
 
 const Home = () => {
     return (
@@ -24,7 +25,16 @@ const Home = () => {
                     <div className="box recipe">
                         <div className="row_1">
                             <div className="column">
-                                picture
+                                <img 
+                                    alt="recipe" 
+                                    src={TempPic} 
+                                    style={{ 
+                                        borderRadius: "35px", 
+                                        width: '100%', 
+                                        height: '100%', 
+                                        objectFit: 'fill' 
+                                    }} 
+                                />
                             </div>
                             <div className="column">
                                 <div className="description_row">
@@ -55,7 +65,7 @@ const Home = () => {
                                 kcal
                             </div>
                             <div className="nutrition_column">
-                                serving size
+                                size
                             </div>
                         </div>
                     </div>
