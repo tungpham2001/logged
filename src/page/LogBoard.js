@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Analytics = () => {
+const LogBoard = () => {
     return (
         <div>
             <h1>log board page</h1>
@@ -8,4 +8,4 @@ const Analytics = () => {
     );
 };
 
-export default Analytics;
+export default LogBoard;

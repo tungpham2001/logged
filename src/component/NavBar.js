@@ -13,7 +13,9 @@ import Logo from "../images/logged.jpg";
 
 const NavBar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(false);
+
     const toggle = () => setIsOpen (!isOpen);
+
     const menuItem=[
         {
             path:"/",

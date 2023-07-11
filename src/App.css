@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400&display=swap');
+
 * {
     margin:0;
     padding:0;
     text-decoration: none;
 }
 
+body {
+    background: linear-gradient(135deg, rgba(153, 72, 255, 0.5), rgba(89, 0, 255, 0.1), rgba(82, 0, 255, 0.3));
+}
+
 .container {
     display: flex;
+    font-family: 'Jost', sans-serif;
 }
 
 main {
@@ -23,7 +30,7 @@ main {
 .top_section {
     display: flex;
     align-items:center;
-    padding:20px 15px;
+    padding: 20px 15px;
 }
 
 .logo {
@@ -65,13 +72,13 @@ main {
 }
 
 .link_content {
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 .link_content .icon {
-  margin-left: 1vw;
+    margin-left: 1vw;
 }

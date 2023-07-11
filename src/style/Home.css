@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+.home_container {
+    padding: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-family: 'Jost', sans-serif;
+}
+
+.home_container > h1 {
+    font-weight: 400;
+    color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    gap: 7vw;
+}
+  
+.box {
+    flex: 1;
+    height: 37vh;
+    border-radius: 40px;
+}
+
+.avg_cal_consumed {
+    border: 5px solid #9DBDFC;
+    background-color: #B2D1FF;
+}
+
+.avg_cal_consumed > .left {
+    width: 40%;
+    background-color: #9DBDFC;
+    height: 100%;
+    border-radius: 35px 0 0 35px;
+}
+  
+.avg_cal_consumed > .right {
+    width: 60%;
+}
+
+.avg_cal_burned {
+    border: 5px solid #5BA57D;
+    background-color: #70C893;
+}
+
+.avg_cal_burned > .left {
+    width: 40%;
+    background-color: #5BA57D;
+    height: 100%;
+    border-radius: 35px 0 0 35px;
+}
+  
+.avg_cal_burned > .right {
+    width: 60%;
+    background-color: gray;
+}
+
+.log_board_display {
+    border: 5px solid rgb(202, 201, 141);
+    background-color: #FEFFC3;
+}
+
+.log_board_display > .left {
+    width: 45%;
+    background-color: rgb(202, 201, 141);
+    height: 90%;
+    border-radius: 35px 35px 35px 35px;
+    margin: 1vw 1vw auto auto;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid lightcoral;
+    background-color: #FFCBC3;
+}
+
+.recipe > .row_1 {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    align-items: center;
+    width: 100%;
+    background-color: green;
+    border-radius: 35px 35px 0 0;
+}
+
+.recipe > .row_1 > .column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    height: 80%;
+    border: 2px solid red;
+    border-radius: 35px 35px 0 0;
+    margin: 6px 6px 6px 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe > .row_1 > .column > .description_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blue;
+    margin: auto;
+    width: 100%;
+}
+
+.recipe > .row_2 {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(72, 112, 72);
+    border-radius: 0 0 35px 35px;
+}
+
+.recipe > .row_2 > .nutrition_column {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    border: 2px solid red;
+    margin: auto;
+    height: 50%;
+    margin: 6px 6px 6px 6px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 35px 35px;
+}
+
+.separator {
+    border-top: 10px solid #a7a4f3;
+    margin: 22px 0;
+    margin: 6px 6px 6px 6px;
+}
+
+.home_display_box {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 5vh;
+}
