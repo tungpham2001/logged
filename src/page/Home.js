@@ -1,6 +1,8 @@
 import React from 'react';
 import "../style/Home.css";
 import TempPic from "../images/logged.jpg";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Home = () => {
     return (
@@ -20,7 +22,26 @@ const Home = () => {
                 <div className="separator"></div>
                 <div className="row">
                     <div className="box log_board_display">
-                        <div className="left"></div>
+                        <div className="left">
+                            <div style={{ 
+                                    width: 200, 
+                                    height: 200, 
+                                }}
+                            >
+                                <CircularProgressbar value="75" text={`75%`} />
+                            </div>
+                            <div className="log_detail">
+                                <h3>you have 1000 kcal left!</h3>
+                            </div>
+                            <div className="log_button">
+                                <button className="log_button_toggle">log in your food</button>
+                            </div>
+                        </div>
+                        <div className="right">
+                            <div className="log_row">lol</div>
+                            <div className="log_row">lol</div>
+                            <div className="log_row">lol</div>
+                        </div>
                     </div>
                     <div className="box recipe">
                         <div className="row_1">
