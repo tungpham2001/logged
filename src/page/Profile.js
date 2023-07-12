@@ -227,13 +227,12 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className="calories_container">
-                    <div className="calories_table">
-                        <div>
-                            <p>Your BMI: {bmi}</p>
-                            <p>Status: {status}</p>
-                            <h4>Calorie Calculations:</h4>
+                    {/* <div className="calories_table"> */}
+                        <div className="calories_status">
+                            <h2>Your BMI: {bmi}</h2>
+                            <h2>Status: {status}</h2>
                         </div>
-                    </div>
+                    {/* </div> */}
                     <div className="calories_table">
                         <div>
                             <h3>For weight loss:</h3>
