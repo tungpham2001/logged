@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const Home = () => {
     return (
         <div className="home_container">
-            <h1 className="home_title">Welcome back, Tung Pham</h1>
+            <h1 className="home_title">Welcome back, Tung Pham!</h1>
             <div className="home_display_box">
                 <div className="row">
                     <div className="box avg_cal_consumed">
