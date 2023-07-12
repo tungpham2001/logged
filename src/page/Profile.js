@@ -1,7 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import "../style/Profile.css";
+import { FullNameContext } from '../FullNameContext';
 
 const Profile = () => {
+    const { fullName, setFullName } = useContext(FullNameContext);
+
+    const handleFullNameChange = (e) => {
+        setFullName(e.target.value);
+    };
     const [weight, setWeight] = useState(() => localStorage.getItem("weight") || "");
     const [height, setHeight] = useState(() => localStorage.getItem("height") || "");
     const [bmi, setBmi] = useState("");
@@ -111,6 +117,10 @@ const Profile = () => {
     }, [calculateBMI]);
 
     useEffect(() => {
+        localStorage.setItem("fullName", fullName);
+    }, [fullName]);
+
+    useEffect(() => {
         localStorage.setItem("weight", weight);
     }, [weight]);
     
@@ -137,7 +147,7 @@ const Profile = () => {
 
     return (
         <div className="master_container">
-            <h1 className="master_title">Hi Tung Pham, how can LOGGED help you today?</h1>
+            <h1 className="master_title">Hi {fullName}, how can LOGGED help you today?</h1>
             <div className="profile_container">
                 <div className="input_field_container">
                     <h2>Your Profile Information</h2>
@@ -145,7 +155,8 @@ const Profile = () => {
                         <label>Full Name:</label>
                         <input 
                             type="text"
-                            value="Tung Pham"
+                            value={fullName}
+                            onChange={handleFullNameChange}
                             readOnly={!isEditing}
                         />
                     </div>

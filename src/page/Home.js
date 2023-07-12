@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "../style/Home.css";
 import TempPic from "../images/logged.jpg";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { FullNameContext } from '../FullNameContext';
 
 const Home = () => {
+    const { fullName } = useContext(FullNameContext);
+
     return (
         <div className="home_container">
-            <h1 className="home_title">Welcome back, Tung Pham!</h1>
+            <h1 className="home_title">Welcome back, {fullName}!</h1>
             <div className="home_display_box">
                 <div className="row">
                     <div className="box avg_cal_consumed">
