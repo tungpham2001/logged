@@ -17,6 +17,9 @@ const Profile = () => {
     const [activityLevel, setActivityLevel] = useState(() => localStorage.getItem("activityLevel") || "very_active");
     const [isEditing, setIsEditing] = useState(false);
 
+    const [weightChangeSpeed, setWeightChangeSpeed] = useState(() => localStorage.getItem("weightChangeSpeed") || "maintain");
+    const [calorieGoal, setCalorieGoal] = useState(() => localStorage.getItem("calorieGoal") || "");
+
     const [maintenanceCalories, setMaintenanceCalories] = useState(() => localStorage.getItem("maintenanceCalories") || "");
     const [mildWeightLossCalories, setMildWeightLossCalories] = useState(() => localStorage.getItem("mildWeightLossCalories") || "");
     const [weightLossCalories, setWeightLossCalories] = useState(() => localStorage.getItem("weightLossCalories") || "");
@@ -40,6 +43,44 @@ const Profile = () => {
             }
         }
     }, [weight, height]);
+
+    const handleGoalUpdate = () => {
+        let newCalories = 0;
+      
+        if (weightChangeSpeed === "maintain") {
+          newCalories = maintenanceCalories;
+        } else if (weightChangeSpeed === "minus02") {
+          newCalories = weightLossCalories;
+        } else if (weightChangeSpeed === "minus05") {
+          newCalories = mildWeightLossCalories;
+        } else if (weightChangeSpeed === "minus08") {
+          newCalories = extremeWeightLossCalories;
+        } else if (weightChangeSpeed === "plus02") {
+          newCalories = weightGainCalories;
+        } else if (weightChangeSpeed === "plus05") {
+          newCalories = mildWeightGainCalories;
+        } else if (weightChangeSpeed === "plus08") {
+          newCalories = extremeWeightGainCalories;
+        }
+      
+        newCalories = parseFloat(newCalories);
+        setCalorieGoal(newCalories.toFixed(0));
+        localStorage.setItem("calorieGoal", newCalories.toFixed(0));
+        localStorage.setItem("weightChangeSpeed", weightChangeSpeed);
+    };
+
+    useEffect(() => {
+        const savedCalorieGoal = localStorage.getItem("calorieGoal");
+        const savedWeightChangeSpeed = localStorage.getItem("weightChangeSpeed");
+    
+        if (savedCalorieGoal) {
+          setCalorieGoal(savedCalorieGoal);
+        }
+    
+        if (savedWeightChangeSpeed) {
+          setWeightChangeSpeed(savedWeightChangeSpeed);
+        }
+    }, []);
 
     const calculateMaintenanceCalories = () => {
         let bmr = 0;
@@ -295,6 +336,32 @@ const Profile = () => {
                             </tbody>
                         </table> 
                     </div>
+                </div>
+            </div>
+            <div className="goal_container">
+                <h2>What is your weight goal?</h2>
+                <div className="goal_options">
+                    <select
+                        value={weightChangeSpeed}
+                        onChange={(e) => setWeightChangeSpeed(e.target.value)}
+                    >
+                        <option value="minus08">Lose 0.8 kg per week</option>
+                        <option value="minus05">Lose 0.5 kg per week</option>
+                        <option value="minus02">Lose 0.2 kg per week</option>
+                        <option value="maintain">Maintain</option>
+                        <option value="plus02">Gain 0.2 kg per week</option>
+                        <option value="plus05">Gain 0.5 kg per week</option>
+                        <option value="plus08">Gain 0.8 kg per week</option>
+                    </select>
+                    <button 
+                        className="goal_button"
+                        onClick={handleGoalUpdate}
+                    >
+                        Update Goal
+                    </button>
+                </div>
+                <div className="calorie_goal">
+                    <h3>Daily Calories: {calorieGoal} kcal</h3>
                 </div>
             </div>
         </div>

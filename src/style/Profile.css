@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     margin: auto 0 auto 2vw;
-    border: 3px solid rgb(153, 110, 223);;
+    border: 3px solid rgb(153, 110, 223);
     background-color: rgb(182, 173, 230);
     color: white;
     border-radius: 35px;
@@ -133,4 +133,58 @@
 
 .button_container > button {
     margin: 0 10px;
+}
+
+.goal_container {
+    font-family: 'Jost', sans-serif;
+    border: 3px solid rgb(153, 110, 223);
+    background-color: rgb(182, 173, 230);
+    border-radius: 25px;
+    padding: 1.2rem;
+    width: 50%;
+    margin: 2vh auto;
+    height: 120px;
+}
+
+.goal_container > h2 {
+    color: rgb(255, 255, 255);
+}
+
+.goal_options > select {
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    border-radius: 10px;
+    background-color: rgb(153, 110, 223);
+    color: rgb(255, 255, 255);
+    margin-right: 1vw;
+    margin-top: 1vw;
+}
+
+.goal_options select:hover {
+    background-color: blueviolet;
+}
+
+.calorie_goal {
+    text-align: right;
+    width: 50%;
+    float: right;
+    font-size: larger;
+    color:rgb(92, 48, 114);
+}
+
+.goal_button {
+    font-family: 'Jost', sans-serif;
+    font-size: medium;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgb(153, 110, 223);
+    color: rgb(255, 255, 255);
+    border-color: rgb(132, 72, 228);
+    border-radius: 10px;
+    border-style: double;
+    cursor: pointer;
+}
+
+.goal_button:hover {
+    background-color: blueviolet;
+    transform: scale(1.05);
 }
