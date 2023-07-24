@@ -4,6 +4,7 @@ import TempPic from "../images/logged.jpg";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { FullNameContext } from '../FullNameContext';
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const { fullName } = useContext(FullNameContext);
@@ -37,7 +38,9 @@ const Home = () => {
                                 <h3>you have 1000 kcal left!</h3>
                             </div>
                             <div className="log_button">
-                                <button className="log_button_toggle">log in your food</button>
+                                <Link className="log_button_toggle" to="/log">
+                                    log in your food
+                                </Link>
                             </div>
                         </div>
                         <div className="right">

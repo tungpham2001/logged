@@ -1,0 +1,26 @@
+.log-board-container {
+    padding: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-family: 'Jost', sans-serif;
+}
+
+.log-board-container > h1 {
+    font-weight: 400;
+    color: white;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.column.log-summary,
+.column.log-items,
+.column.log-entry {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid red;
+}

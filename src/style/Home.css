@@ -86,6 +86,10 @@
     color: white;
 }
 
+.log_board_display > .left > .log_button > .log_button_toggle:hover {
+    background-color: #524f4f;
+}
+
 .log_board_display > .right {
     display: flex;
     flex-direction: column;
